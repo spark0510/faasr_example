@@ -6,7 +6,7 @@ test1 <- function(faasr) {
   output <- read.table("local/test1.txt", header=F)
   faasr_put_file(faasr, "S3_A", "local", "output1.txt", "folder", args$output)
   end <- Sys.time()
-  message<-paste("start at:",start,"\n","end at:",end)
+  message<-end-start
   faasr_log(faasr, message)
 }	
 
@@ -18,7 +18,7 @@ test2 <- function(faasr) {
   output <- read.table("local/test2.txt", header=F)
   faasr_put_file(faasr, "S3_A", "local", "output2.txt", "folder", args$output)
   end <- Sys.time()
-  message<-paste("start at:",start,"\n","end at:",end)
+  message<-end-start
   faasr_log(faasr, message)
 }	
 
@@ -30,7 +30,7 @@ test3 <- function(faasr) {
   output <- read.table("local/test3.txt", header=F)
   faasr_put_file(faasr, "S3_A", "local", "output3.txt", "folder", args$output)
   end <- Sys.time()
-  message<-paste("start at:",start,"\n","end at:",end)
+  message<-end-start
   faasr_log(faasr, message)
 }	
 
@@ -41,6 +41,6 @@ test4 <- function(faasr) {
   faasr_get_file(faasr, "S3_A", "folder", args$input, "local", "test4.pdf")
   faasr_put_file(faasr, "S3_A", "local", "output4.pdf", "folder", args$output)
   end <- Sys.time()
-  message<-paste("start at:",start,"\n","end at:",end)
+  message<-end-start
   faasr_log(faasr, message)
 }	
