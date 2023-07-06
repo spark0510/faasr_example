@@ -1,7 +1,7 @@
 test1 <- function(faasr) {
   start<-Sys.time()
   args <- faasr_get_user_function_args(faasr)
-
+  if(file.exists("test1.txt")){file.remove("test1.txt")}
   faasr_get_file(faasr, "S3_A", "folder", args$input, "local", "test1.txt")
   output <- read.table("local/test1.txt", header=F)
   faasr_put_file(faasr, "S3_A", "local", "output1.txt", "folder", args$output)
@@ -17,7 +17,7 @@ test1 <- function(faasr) {
 test2 <- function(faasr) {
   start<-Sys.time()
   args <- faasr_get_user_function_args(faasr)
-
+  if(file.exists("test2.txt")){file.remove("test2.txt")}
   faasr_get_file(faasr, "S3_A", "folder", args$input, "local", "test2.txt")
   output <- read.table("local/test2.txt", header=F)
   faasr_put_file(faasr, "S3_A", "local", "output2.txt", "folder", args$output)
@@ -33,7 +33,7 @@ test2 <- function(faasr) {
 test3 <- function(faasr) {
   start<-Sys.time()
   args <- faasr_get_user_function_args(faasr)
-
+  if(file.exists("test3.txt")){file.remove("test3.txt")}
   faasr_get_file(faasr, "S3_A", "folder", args$input, "local", "test3.txt")
   output <- read.table("local/test3.txt", header=F)
   faasr_put_file(faasr, "S3_A", "local", "output3.txt", "folder", args$output)
@@ -49,7 +49,7 @@ test3 <- function(faasr) {
 test4 <- function(faasr) {
   start<-Sys.time()
   args <- faasr_get_user_function_args(faasr)
-
+  if(file.exists("test4.pdf")){file.remove("test4.pdf")}
   faasr_get_file(faasr, "S3_A", "folder", args$input, "local", "test4.pdf")
   faasr_put_file(faasr, "S3_A", "local", "output4.pdf", "folder", args$output)
   end <- Sys.time()
